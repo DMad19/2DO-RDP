@@ -1,10 +1,10 @@
 import './App.css'
-
+import Cards from './components/Cards'
 function App() {
-
+  
   return (
     <>
-    <div className='bg-white'>Justice for Pavan</div>
+      <Cards/>
     </>
   )
 }
