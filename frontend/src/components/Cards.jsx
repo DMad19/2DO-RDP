@@ -1,18 +1,22 @@
 import Card from "./card";
-import cardData from "../hooks/useGetCardData";
+import useGetCardData from "../hooks/useGetCardData";
 export default function Cards(){
-    let cardDataArray =  cardData.tasks      
-    let cards = cardDataArray.map((l)=>(
-        <Card
-            title={l.title}
-            description={l.description} 
-            priority= {l.priority}
-            createdOn = {l.createdOn}
-        />
-    ))
+        const cardData = useGetCardData()     
+        let cards =[]
+        if(cardData!=null){
+            cards = cardData.map((l)=>(
+                <Card
+                    title={l.title}
+                    description={l.description} 
+                    priority= {l.priority}
+                    created_at = {l.created_at}
+                    statusFlag={l.completed_status}
+                />
+            ))
+        } 
     return (
         <div className="grid grid-flow-row grid-cols-2">
-            {cards}
+          {cards}  
         </div>
     )
 }
