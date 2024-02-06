@@ -1,13 +1,20 @@
 import {useRef} from 'react'
 import useAddItemRef from '../hooks/useAddItemRef';
 
-function Form() {
+function Form({setShowForm}) {
     const titleRef = useRef(null);
     const descRef = useRef(null);
     const priorityRef = useRef(null);
     const handleSubmit = (e) =>{
         e.preventDefault()
         useAddItemRef(titleRef.current.value,descRef.current.value,priorityRef.current.value)
+        .then(response => {
+          console.log('Response from API:', response);
+          setShowForm(false)
+        })
+        .catch(error => {
+          console.error('Error posting data:', error);
+        });
     }
   return (
     <form onSubmit={handleSubmit}>

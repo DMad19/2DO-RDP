@@ -6,13 +6,13 @@ import Form from './components/Form'
 function App() {
 const [showForm,setShowForm]  = useState(false)
   const handleAddItem = () =>{
-    setShowForm((prev)=>!prev)
+    setShowForm(true)
   }
   return (
     <>
       <Navbar handleAddItem={handleAddItem}/>
       <Cards/>
-      {showForm && <Form/>}
+      {showForm && <Form setShowForm={setShowForm}/>}
     </>
   )
 }

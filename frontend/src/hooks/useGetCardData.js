@@ -5,7 +5,7 @@ export default function useGetCardData() {
   useEffect(() => {
     // Perform GET request when the component mounts
     fetchData();
-  }, []);
+  }, [responseData]);
   const fetchData = () => {
     axios
       .get("http://127.0.0.1:8000/tasks/", {
