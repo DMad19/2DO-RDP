@@ -5,7 +5,6 @@ export default async function useAddItemRef(title, description, priority) {
     description: description,
     priority: priority,
   };
-  console.log(addItemData);
   try {
     const response = await axios.post(
       "http://127.0.0.1:8000/tasks/",

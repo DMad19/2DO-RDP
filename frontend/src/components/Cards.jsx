@@ -6,6 +6,8 @@ export default function Cards(){
         if(cardData!=null){
             cards = cardData.map((l)=>(
                 <Card
+                    key={l.id}
+                    id = {l.id}
                     title={l.title}
                     description={l.description} 
                     priority= {l.priority}
