@@ -90,10 +90,10 @@ DATABASES = {
         'ENFORCE_SCHEMA': False,
         "NAME": "2doDB",  # name of your DB which you want to access
         "CLIENT": {
-            'host': 'mongodb+srv://ranganath:LagLag59856@ranacluster.ntxlpvs.mongodb.net/?retryWrites=true&w=majority',  # your db_url if not hosted then localhost
+            'host': 'mongodb+srv://ranacluster:password@ranacluster.ntxlpvs.mongodb.net/?retryWrites=true&w=majority',  # your db_url if not hosted then localhost
             'port': 27017,  # port e.g. 27017
             'username': 'ranganath',
-            'password': 'LagLag59856',
+            'password': 'password',
             'authMechanism': 'SCRAM-SHA-1'  # set your auth_mechanism if you know
 
         }
