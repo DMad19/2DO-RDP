@@ -81,9 +81,22 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+    "default": {
+        "ENGINE": "djongo",
+        'ENFORCE_SCHEMA': False,
+        "NAME": "2doDB",  # name of your DB which you want to access
+        "CLIENT": {
+            'host': 'mongodb+srv://ranganath:LagLag59856@ranacluster.ntxlpvs.mongodb.net/?retryWrites=true&w=majority',  # your db_url if not hosted then localhost
+            'port': 27017,  # port e.g. 27017
+            'username': 'ranganath',
+            'password': 'LagLag59856',
+            'authMechanism': 'SCRAM-SHA-1'  # set your auth_mechanism if you know
+
+        }
     }
 }
 
